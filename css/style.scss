@@ -23,6 +23,46 @@
 }
 // == width content ==
 
+// == preloader ==
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(54, 54, 54);
+    z-index: 5;
+    transition: 1s all;
+    opacity: 1;
+
+    .loader {
+        width: 75px;
+        height: 75px;
+        border: 10px solid white;
+        border-radius: 50%;
+        border-top-color: blueviolet;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        animation: 2s spin infinite linear;
+    }
+
+    &.done {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+// == / preloader ==
 
 // == header ==
 .section-header {
